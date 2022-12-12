@@ -1,0 +1,249 @@
+body 
+    color: $font-color
+    font-family: $font-family
+    font-size: 18px
+    line-height: 22px
+    background-color: $background-color
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+
+
+main 
+  min-height: calc(100vh - 220px)
+
+
+strong 
+  font-weight: 700
+
+.menu-button
+  position: absolute
+  top: 20px
+  right: 20px
+  border: none
+  width: 50px
+  height: 50px
+  border-radius: 12px
+  background: #333
+  z-index: 100
+  overflow: hidden
+  transition: .7s ease-out all
+  border: 2px solid #333
+  
+  &::before
+    content: ''
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+    border-radius: 50%
+    width: 20px
+    height: 20px
+    background: #ddd
+    z-index: 2
+    transition: .7s ease-out all
+
+  &.is-open
+    background: #ddd
+
+    &::before
+      background: #333
+      top: 100%  
+
+
+p 
+  margin-bottom: 10px
+
+
+
+
+picture 
+  display: flex
+
+  
+img 
+  max-width: 100%
+
+
+section 
+  margin-bottom: 50px
+
+
+.section-title 
+  font-size: 36px
+  font-weight: 700
+  text-decoration: underline
+
+.type-wrapper
+  opacity: 0 
+  pointer-events: none
+  user-select: none
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  display: flex
+  flex-direction: column
+  justify-content: center
+  background: #fff
+  padding: 24px
+  text-align: center
+
+  &.is-open
+    opacity: 1
+    pointer-events: auto
+    user-select: auto
+
+  p
+    margin-bottom: 30px
+
+  button
+    width: fit-content
+
+    &:first-child, &:nth-child(3)
+      justify-self: end
+      
+      
+
+
+  .all-types
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 24px
+
+    img
+      width: 60px
+      height: 60px
+
+.menu-wrapper
+  opacity: 0 
+  pointer-events: none
+  user-select: none
+  position: fixed
+  background: #ddd
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  z-index: 10
+  transition: .7s all
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  text-align: center
+
+  li
+    margin-bottom: 15px
+
+  &.is-open 
+    opacity: 1
+    pointer-events: auto
+    user-select: auto
+
+.page
+  opacity: 0 
+  pointer-events: none
+  user-select: none
+  position: absolute
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  padding: 60px 24px
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+  &.is-active
+    opacity: 1
+    pointer-events: auto
+    user-select: auto
+
+  .layout-wrapper
+    position: relative
+    width: 100vw
+    height: 100vh
+
+.page-game 
+  .name-wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 40px
+
+    .name1
+      justify-self: end
+  
+.result-wrapper
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-gap: 40px
+  margin-bottom: 30px
+
+  .first-result
+    justify-self: end
+
+.type-selector
+  max-width: 50px
+  margin: 0 auto
+
+.game
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-gap: 40px
+  margin-bottom: 10px
+  position: relative
+
+  &::before
+    content: ''
+    width: 40px
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+    height: 2px
+    background: #000  
+
+  .option
+    width: 18px
+    height: 18px
+    border-radius: 50%
+    position: relative
+
+    &.is-checked::before
+      content: ''
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+      background: #000
+      width: 12px
+      height: 12px
+      border-radius: 50%
+
+    &.option1
+      justify-self: end
+
+.game-line
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  width: 2px
+  background: #000
+  top: 0
+  bottom: 0
+
+
+.game-wrapper
+  position: relative
+
+.number-wrapper
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding: 20px 0
+
+  button
+    margin-bottom: 20px
+    padding: 20px

@@ -1,0 +1,58 @@
+extends ../layout.pug
+block head
+    title Hello World
+
+block content
+    
+    .layout-wrapper 
+        .page.page-welcome.is-active(data-page="1")
+            p.welcome-text Bem-vindo ao
+            h1 Sueca Tracker 3000
+            p A ÚNICA ferramenta de acompanhamento de uma boa suecada
+            .nav-wrapper
+                button(data-navigate="2") Seguinte
+        .page.page-names(data-page="2")
+            .name-wrapper 
+                .input-wrapper
+                    label Nome da primeira equipa
+                    input(type="text" name="first" value="Nós")
+                .input-wrapper
+                    label Nome da segunda equipa
+                    input(type="text" name="second" value="Vós")
+            .nav-wrapper
+                button(data-navigate="1") Anterior
+                button(data-navigate="3") Seguinte
+        .page.page-numbers(data-page="3")
+            h2 Quantos jogos?
+            .number-wrapper 
+                button(data-number="3") 3
+                button(data-number="5") 5
+                button(data-number="10") 10
+            .nav-wrapper
+                button(data-navigate="2") Anterior
+        .page.page-game(data-page="4")
+                .name-wrapper 
+                    p.name.name1
+                    p.name.name2 
+
+                .game-wrapper 
+                    span.game-line
+                
+                .result-wrapper
+                    span.first-result 0
+                    span.second-result 0
+                
+                button.type-selector 
+                    img(src="assets/images/all-suits.png")
+    .type-wrapper 
+        p Qual é o trunfo?!
+        .all-types 
+            button(data-suit="clubs")
+                img(src="assets/images/clubs.svg")
+            button(data-suit="diamonds")
+                img(src="assets/images/diamonds.svg")
+            button(data-suit="hearts")
+                img(src="assets/images/hearts.svg")
+            button(data-suit="spades")
+                img(src="assets/images/spades.svg")
+            

@@ -1,0 +1,13 @@
+doctype html
+html  
+    head
+        meta(name="viewport" content="initial-scale=1")
+        block head             
+        style 
+            include ./../styles/fonts.css
+        link(rel='stylesheet', href='./assets/style.css')
+    body
+        include ./components/header.pug
+        main
+            block content
+        include ./components/footer.pug
